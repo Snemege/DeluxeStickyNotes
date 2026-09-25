@@ -3,6 +3,16 @@
 Simple desktop sticky notes for GNOME (GTK4 + libadwaita, Python).
 Every note opens in its own small window; the main window shows all notes as cards.
 
+<p align="center">
+  <img src="data/screenshots/main-window.png" alt="All notes as cards, with pinning, alarms and a locked note" width="720">
+</p>
+
+<p align="center">
+  <img src="data/screenshots/note-window.png" alt="A note with a to-do list, formatting and an alarm" width="300">
+  &nbsp;&nbsp;
+  <img src="data/screenshots/locked-note.png" alt="A locked note behaves like part of the wallpaper" width="300">
+</p>
+
 The interface is in **English** and **Turkish** (Türkçe). It follows your system language;
 force one with `STICKYNOTES_LANG=en` or `STICKYNOTES_LANG=tr`.
 

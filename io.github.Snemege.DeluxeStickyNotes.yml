@@ -16,7 +16,7 @@ modules:
       - install -d /app/share/deluxe-sticky-notes
       - cp -r stickynotes /app/share/deluxe-sticky-notes/
       - install -Dm755 data/deluxe-sticky-notes.sh /app/bin/deluxe-sticky-notes
-      - install -Dm644 locale/tr/LC_MESSAGES/sticky-notes.mo /app/share/locale/tr/LC_MESSAGES/sticky-notes.mo
+      - install -Dm644 locale/tr/LC_MESSAGES/sticky-notes.mo /app/share/deluxe-sticky-notes/locale/tr/LC_MESSAGES/sticky-notes.mo
       - install -Dm644 data/io.github.Snemege.DeluxeStickyNotes.desktop /app/share/applications/io.github.Snemege.DeluxeStickyNotes.desktop
       - install -Dm644 data/io.github.Snemege.DeluxeStickyNotes.metainfo.xml /app/share/metainfo/io.github.Snemege.DeluxeStickyNotes.metainfo.xml
       - for s in 48 64 128 256 512; do install -Dm644 data/icons/hicolor/${s}x${s}/apps/io.github.Snemege.DeluxeStickyNotes.png /app/share/icons/hicolor/${s}x${s}/apps/io.github.Snemege.DeluxeStickyNotes.png; done

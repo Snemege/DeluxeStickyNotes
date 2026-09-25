@@ -32,7 +32,17 @@ force one with `STICKYNOTES_LANG=en` or `STICKYNOTES_LANG=tr`.
 - **More:** search (Turkish İ/ı aware), pinning, "always on top" / "always at the bottom" layer,
   right-click menus on notes and cards, "Suggest to the developers" (email or clipboard).
 
-## Run
+## Install (Flatpak bundle)
+
+Download `deluxe-sticky-notes-0.1.0.flatpak` from the [latest release](https://github.com/Snemege/DeluxeStickyNotes/releases/latest), then:
+
+```sh
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo   # once, for the GNOME runtime
+flatpak install --user deluxe-sticky-notes-0.1.0.flatpak
+flatpak run io.github.Snemege.DeluxeStickyNotes
+```
+
+## Run from source
 
 ```sh
 python3 -m stickynotes

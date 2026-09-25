@@ -1,0 +1,21 @@
+.sticky-note {
+  border-radius: 10px;
+  border: 1px solid rgba(50, 40, 20, 0.22);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+}
+.sticky-note-header { padding: 4px 6px 4px 10px; border-radius: 9px 9px 0 0; }
+.sticky-title { font-weight: bold; color: #2f2a1b; }
+.sticky-tool-button { min-width: 24px; min-height: 24px; padding: 0; color: #383126; }
+.sticky-entry {
+  background-color: transparent; border: none; box-shadow: none;
+  color: #2f2a1b; caret-color: #2f2a1b; padding: 8px 10px; margin: 0;
+  selection-background-color: rgba(0, 0, 0, 0.25); selected-color: #ffffff;
+}
+.sticky-yellow { background-color: #fff6bf; }
+.sticky-yellow .sticky-note-header { background-color: #f5d651; }
+.sticky-pink { background-color: #ffe9ef; }
+.sticky-pink .sticky-note-header { background-color: #f4a6bc; }
+.sticky-blue { background-color: #e6f3ff; }
+.sticky-blue .sticky-note-header { background-color: #8cc4f2; }
+.sticky-green { background-color: #e8f7dd; }
+.sticky-green .sticky-note-header { background-color: #a3d98a; }

@@ -1,0 +1,419 @@
+# Turkish translation of sticky-notes.
+# Copyright (C) sticky-notes contributors
+msgid ""
+msgstr ""
+"Project-Id-Version: sticky-notes 0.1.0\n"
+"Report-Msgid-Bugs-To: snemege@gmail.com\n"
+"POT-Creation-Date: 2026-09-25 15:07+0300\n"
+"PO-Revision-Date: 2026-09-25 14:00+0300\n"
+"Last-Translator: sticky-notes contributors\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Start in the background without opening the main window"
+msgstr "Ana pencereyi açmadan arka planda başlat"
+
+msgid "Show all notes (sent to the running app)"
+msgstr "Tüm notları göster (çalışan uygulamaya iletilir)"
+
+msgid "Create a new note (sent to the running app)"
+msgstr "Yeni not oluştur (çalışan uygulamaya iletilir)"
+
+msgid "Keep running in the background?"
+msgstr "Arka planda çalışmaya devam edilsin mi?"
+
+msgid ""
+"If the app keeps running in the background, alarms ring on time and your "
+"open notes stay where they are. You can reach all notes from the Deluxe "
+"Sticky Notes icon in the top bar or from a note's right-click menu."
+msgstr ""
+"Uygulama arka planda çalışırsa alarmlar zamanında çalar ve açık notların "
+"yerinde kalır. Tüm notlara üst çubuktaki Deluxe Yapışkan Notlar ikonundan ya "
+"da bir notun sağ tık menüsünden ulaşırsın."
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "No, quit"
+msgstr "Hayır, kapat"
+
+msgid "Yes, keep running"
+msgstr "Evet, arka planda çalışsın"
+
+msgid "Deluxe Sticky Notes is running in the background"
+msgstr "Deluxe Yapışkan Notlar arka planda çalışıyor"
+
+msgid ""
+"Click here to see all notes, or use the Deluxe Sticky Notes icon in the top "
+"bar."
+msgstr ""
+"Tüm notları görmek için buraya tıkla ya da üst çubuktaki Deluxe Yapışkan "
+"Notlar ikonunu kullan."
+
+#, python-brace-format
+msgid "{n} note imported"
+msgid_plural "{n} notes imported"
+msgstr[0] "{n} not içe aktarıldı"
+
+msgid "No new notes found (you already have them all)"
+msgstr "Yeni not bulunamadı (hepsi zaten var)"
+
+msgid "Couldn't read the old notes"
+msgstr "Eski notlar okunamadı"
+
+msgid "Folder to save the notes in"
+msgstr "Notların kaydedileceği klasör"
+
+#, python-brace-format
+msgid "{n} note exported"
+msgid_plural "{n} notes exported"
+msgstr[0] "{n} not dışa aktarıldı"
+
+msgid "Unlock the note first"
+msgstr "Önce notun kilidini aç"
+
+msgid "⏰ Missed alarm: "
+msgstr "⏰ Kaçırılan alarm: "
+
+msgid "Note"
+msgstr "Not"
+
+#, python-brace-format
+msgid "Snooze {n} min"
+msgstr "{n} dk ertele"
+
+msgid "Runs in the background for alarms and open notes"
+msgstr "Alarmlar ve açık notlar için arka planda çalışır"
+
+msgid "Untitled note"
+msgstr "Başlıksız not"
+
+msgid "Deluxe Sticky Notes feedback"
+msgstr "Deluxe Yapışkan Notlar geri bildirimi"
+
+msgid "Suggest to the developers"
+msgstr "Geliştiricilere öner"
+
+msgid "Email address the feedback goes to"
+msgstr "Geri bildirimin gideceği e-posta adresi"
+
+msgid ""
+"This technical information is added to your message (the contents of your "
+"notes are never sent):"
+msgstr ""
+"Mesajına şu teknik bilgi eklenir (notlarının içeriği asla gönderilmez):"
+
+msgid "Copy to clipboard"
+msgstr "Panoya kopyala"
+
+msgid "Send by email"
+msgstr "E-posta ile gönder"
+
+msgid "Write your suggestion, the bug you found, or a missing feature:"
+msgstr "Önerini, bulduğun hatayı ya da eksik bir özelliği yaz:"
+
+msgid ""
+"To send by email, enter a valid address above, or copy to the clipboard."
+msgstr ""
+"E-postayla göndermek için yukarıya geçerli bir adres yaz, ya da panoya "
+"kopyala."
+
+msgid "Copied to the clipboard."
+msgstr "Panoya kopyalandı."
+
+msgid "Your email app opened; send it from there."
+msgstr "E-posta uygulaman açıldı; oradan gönder."
+
+msgid ""
+"Couldn't open an email app. Use “Copy to clipboard” and send it yourself."
+msgstr ""
+"E-posta uygulaması açılamadı. “Panoya kopyala” ile kendin gönderebilirsin."
+
+msgid "Deluxe Sticky Notes"
+msgstr "Deluxe Yapışkan Notlar"
+
+msgid "New note (Ctrl+N)"
+msgstr "Yeni not (Ctrl+N)"
+
+msgid "Trash"
+msgstr "Çöp kutusu"
+
+msgid "Export all notes…"
+msgstr "Tüm notları dışa aktar…"
+
+msgid "Import old (non-Flatpak) notes"
+msgstr "Eski (Flatpak dışı) notları içe aktar"
+
+msgid "Suggest to the developers…"
+msgstr "Geliştiricilere öner…"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Quit (Ctrl+Q)"
+msgstr "Çıkış (Ctrl+Q)"
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Search (Ctrl+F)"
+msgstr "Ara (Ctrl+F)"
+
+msgid "Search notes"
+msgstr "Notlarda ara"
+
+msgid "No notes yet"
+msgstr "Henüz not yok"
+
+msgid "Press Ctrl+N to create a new note."
+msgstr "Ctrl+N ile yeni bir not oluştur."
+
+msgid "No results"
+msgstr "Sonuç yok"
+
+msgid "No note matches your search."
+msgstr "Aramanla eşleşen not bulunamadı."
+
+#, python-brace-format
+msgid "Notes were restored from a backup because the file was corrupt ({date})"
+msgstr "Notlar bozuk dosya yüzünden yedekten geri yüklendi ({date})"
+
+msgid "Edit"
+msgstr "Düzenle"
+
+msgid "Unpin"
+msgstr "Sabitlemeyi kaldır"
+
+msgid "Pin"
+msgstr "Sabitle"
+
+msgid "Unlock note"
+msgstr "Kilidi aç"
+
+msgid "Lock note"
+msgstr "Notu kilitle"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Empty note"
+msgstr "Boş not"
+
+msgid "Right-click: edit, pin, delete"
+msgstr "Sağ tık: düzenle, sabitle, sil"
+
+msgid "Note deleted"
+msgstr "Not silindi"
+
+msgid "Undo"
+msgstr "Geri al"
+
+msgid "Bold (Ctrl+B)"
+msgstr "Kalın (Ctrl+B)"
+
+msgid "Italic (Ctrl+I)"
+msgstr "İtalik (Ctrl+I)"
+
+msgid "Underline (Ctrl+U)"
+msgstr "Altı çizili (Ctrl+U)"
+
+msgid "Strikethrough (Ctrl+Shift+X)"
+msgstr "Üstü çizili (Ctrl+Shift+X)"
+
+msgid "Collapse to the title (or double-click the title)"
+msgstr "Başlığa küçült (başlığa çift tıklayarak da olur)"
+
+msgid "Bullet list (Ctrl+Shift+L)"
+msgstr "Madde işareti (Ctrl+Shift+L)"
+
+msgid "To-do list (Ctrl+Shift+K)"
+msgstr "Yapılacaklar (Ctrl+Shift+K)"
+
+msgid "Make selected text smaller (Ctrl+-)"
+msgstr "Seçili yazıyı küçült (Ctrl+-)"
+
+msgid "Make selected text larger (Ctrl++)"
+msgstr "Seçili yazıyı büyüt (Ctrl++)"
+
+msgid "Delete note…"
+msgstr "Notu sil…"
+
+msgid "Change color"
+msgstr "Rengi değiştir"
+
+msgid "New note"
+msgstr "Yeni not"
+
+msgid "Show all notes"
+msgstr "Tüm notları göster"
+
+msgid "Layer"
+msgstr "Katman"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "Always on top"
+msgstr "Her zaman üstte"
+
+msgid "Always at the bottom (like the desktop)"
+msgstr "Hep altta (masaüstü gibi)"
+
+msgid "Pin to the top of the list"
+msgstr "Listede en üstte sabitle"
+
+msgid "Delete note"
+msgstr "Notu sil"
+
+msgid "Color and options"
+msgstr "Renk ve seçenekler"
+
+msgid "This feature only works in X11/XWayland mode"
+msgstr "Bu özellik yalnızca X11/XWayland modunda çalışır"
+
+msgid "Once"
+msgstr "Bir kez"
+
+msgid "Every day"
+msgstr "Her gün"
+
+msgid "Every week"
+msgstr "Her hafta"
+
+msgid "Repeat:"
+msgstr "Tekrar:"
+
+msgid "Remove alarm"
+msgstr "Alarmı kaldır"
+
+msgid "Set alarm"
+msgstr "Alarm kur"
+
+msgid "That time is in the past"
+msgstr "Geçmiş bir zaman seçtin"
+
+msgid " ↻ every day"
+msgstr " ↻ her gün"
+
+msgid " ↻ every week"
+msgstr " ↻ her hafta"
+
+msgid "Snoozed: "
+msgstr "Ertelendi: "
+
+msgid "Alarm: "
+msgstr "Alarm: "
+
+msgid "Delete this note?"
+msgstr "Notu sil?"
+
+msgid "The note moves to the trash and can be restored within 30 days."
+msgstr "Not çöp kutusuna taşınır, 30 gün içinde geri alınabilir."
+
+msgid "Move to trash"
+msgstr "Çöpe taşı"
+
+msgid "Run in the background"
+msgstr "Arka planda çalış"
+
+msgid ""
+"Alarms keep working and notes stay open even if the main window is closed"
+msgstr "Ana pencere kapansa da alarmlar çalışır ve notlar açık kalır"
+
+msgid "Start automatically at login"
+msgstr "Oturum açılınca otomatik başlat"
+
+msgid "Open notes come back; the main window stays closed"
+msgstr "Açık olan notlar geri gelir, ana pencere açılmaz"
+
+msgid "Background"
+msgstr "Arka plan"
+
+msgid "Alarm sound"
+msgstr "Alarm sesi"
+
+msgid "Play a sound when an alarm rings"
+msgstr "Alarm çalınca ses de çalar"
+
+msgid "Try the alarm sound"
+msgstr "Alarm sesini dene"
+
+msgid "Play"
+msgstr "Çal"
+
+msgid "Alarm"
+msgstr "Alarm"
+
+msgid "Global shortcuts"
+msgstr "Global kısayollar"
+
+msgid ""
+"Ctrl+Alt+N: new note · Ctrl+Alt+A: all notes. GNOME asks you to confirm the "
+"shortcuts when you turn this on; start the app from the app menu."
+msgstr ""
+"Ctrl+Alt+N: yeni not · Ctrl+Alt+A: tüm notlar. Açınca GNOME kısayolları "
+"onaylatır; uygulama menüsünden başlatılmalıdır."
+
+msgid "Shortcuts"
+msgstr "Kısayollar"
+
+msgid "Couldn't set up autostart"
+msgstr "Otomatik başlatma ayarlanamadı"
+
+msgid "Create a new note"
+msgstr "Yeni not oluştur"
+
+msgid "Yellow"
+msgstr "Sarı"
+
+msgid "Pink"
+msgstr "Pembe"
+
+msgid "Green"
+msgstr "Yeşil"
+
+msgid "Blue"
+msgstr "Mavi"
+
+msgid "Purple"
+msgstr "Mor"
+
+msgid "Orange"
+msgstr "Turuncu"
+
+msgid "Empty"
+msgstr "Boşalt"
+
+msgid "Trash is empty"
+msgstr "Çöp kutusu boş"
+
+msgid "Deleted notes stay here for 30 days."
+msgstr "Sildiğin notlar 30 gün burada durur."
+
+#, python-brace-format
+msgid "Deleted {when} · permanently removed in {n} day"
+msgid_plural "Deleted {when} · permanently removed in {n} days"
+msgstr[0] "Silindi {when} · {n} gün sonra kalıcı silinir"
+
+msgid "Restore"
+msgstr "Geri yükle"
+
+msgid "Delete permanently"
+msgstr "Kalıcı olarak sil"
+
+msgid "Empty the trash?"
+msgstr "Çöp kutusu boşaltılsın mı?"
+
+msgid ""
+"All notes in the trash will be permanently deleted. This can't be undone."
+msgstr "Çöpteki tüm notlar kalıcı olarak silinecek. Bu geri alınamaz."
+
+msgid "Quit"
+msgstr "Çıkış"
+
+msgid "Click: show all notes"
+msgstr "Tıkla: tüm notları göster"

@@ -1,0 +1,34 @@
+app-id: io.github.vex.StickyNotes
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+command: sticky-notes
+finish-args:
+  - --share=ipc
+  - --socket=wayland
+  - --socket=x11
+  - --device=dri
+  - --socket=pulseaudio
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --filesystem=xdg-data/io.github.vex.StickyNotes:ro
+modules:
+  - name: sticky-notes
+    buildsystem: simple
+    build-commands:
+      - install -d /app/share/sticky-notes
+      - cp -r stickynotes /app/share/sticky-notes/
+      - install -Dm755 data/sticky-notes.sh /app/bin/sticky-notes
+      - install -Dm644 locale/tr/LC_MESSAGES/sticky-notes.mo /app/share/locale/tr/LC_MESSAGES/sticky-notes.mo
+      - install -Dm644 data/io.github.vex.StickyNotes.desktop /app/share/applications/io.github.vex.StickyNotes.desktop
+      - install -Dm644 data/io.github.vex.StickyNotes.metainfo.xml /app/share/metainfo/io.github.vex.StickyNotes.metainfo.xml
+      - for s in 48 64 128 256 512; do install -Dm644 data/icons/hicolor/${s}x${s}/apps/io.github.vex.StickyNotes.png /app/share/icons/hicolor/${s}x${s}/apps/io.github.vex.StickyNotes.png; done
+    sources:
+      - type: dir
+        path: .
+        skip:
+          - .flatpak-builder
+          - build-dir
+          - tests
+          - old-extension
+          - .git
+          - __pycache__

@@ -1,0 +1,415 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sticky-notes package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sticky-notes\n"
+"Report-Msgid-Bugs-To: snemege@gmail.com\n"
+"POT-Creation-Date: 2026-09-25 15:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Start in the background without opening the main window"
+msgstr ""
+
+msgid "Show all notes (sent to the running app)"
+msgstr ""
+
+msgid "Create a new note (sent to the running app)"
+msgstr ""
+
+msgid "Keep running in the background?"
+msgstr ""
+
+msgid ""
+"If the app keeps running in the background, alarms ring on time and your "
+"open notes stay where they are. You can reach all notes from the Deluxe "
+"Sticky Notes icon in the top bar or from a note's right-click menu."
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "No, quit"
+msgstr ""
+
+msgid "Yes, keep running"
+msgstr ""
+
+msgid "Deluxe Sticky Notes is running in the background"
+msgstr ""
+
+msgid ""
+"Click here to see all notes, or use the Deluxe Sticky Notes icon in the top "
+"bar."
+msgstr ""
+
+#, python-brace-format
+msgid "{n} note imported"
+msgid_plural "{n} notes imported"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "No new notes found (you already have them all)"
+msgstr ""
+
+msgid "Couldn't read the old notes"
+msgstr ""
+
+msgid "Folder to save the notes in"
+msgstr ""
+
+#, python-brace-format
+msgid "{n} note exported"
+msgid_plural "{n} notes exported"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Unlock the note first"
+msgstr ""
+
+msgid "⏰ Missed alarm: "
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+#, python-brace-format
+msgid "Snooze {n} min"
+msgstr ""
+
+msgid "Runs in the background for alarms and open notes"
+msgstr ""
+
+msgid "Untitled note"
+msgstr ""
+
+msgid "Deluxe Sticky Notes feedback"
+msgstr ""
+
+msgid "Suggest to the developers"
+msgstr ""
+
+msgid "Email address the feedback goes to"
+msgstr ""
+
+msgid ""
+"This technical information is added to your message (the contents of your "
+"notes are never sent):"
+msgstr ""
+
+msgid "Copy to clipboard"
+msgstr ""
+
+msgid "Send by email"
+msgstr ""
+
+msgid "Write your suggestion, the bug you found, or a missing feature:"
+msgstr ""
+
+msgid ""
+"To send by email, enter a valid address above, or copy to the clipboard."
+msgstr ""
+
+msgid "Copied to the clipboard."
+msgstr ""
+
+msgid "Your email app opened; send it from there."
+msgstr ""
+
+msgid ""
+"Couldn't open an email app. Use “Copy to clipboard” and send it yourself."
+msgstr ""
+
+msgid "Deluxe Sticky Notes"
+msgstr ""
+
+msgid "New note (Ctrl+N)"
+msgstr ""
+
+msgid "Trash"
+msgstr ""
+
+msgid "Export all notes…"
+msgstr ""
+
+msgid "Import old (non-Flatpak) notes"
+msgstr ""
+
+msgid "Suggest to the developers…"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Quit (Ctrl+Q)"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Search (Ctrl+F)"
+msgstr ""
+
+msgid "Search notes"
+msgstr ""
+
+msgid "No notes yet"
+msgstr ""
+
+msgid "Press Ctrl+N to create a new note."
+msgstr ""
+
+msgid "No results"
+msgstr ""
+
+msgid "No note matches your search."
+msgstr ""
+
+#, python-brace-format
+msgid "Notes were restored from a backup because the file was corrupt ({date})"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Unpin"
+msgstr ""
+
+msgid "Pin"
+msgstr ""
+
+msgid "Unlock note"
+msgstr ""
+
+msgid "Lock note"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Empty note"
+msgstr ""
+
+msgid "Right-click: edit, pin, delete"
+msgstr ""
+
+msgid "Note deleted"
+msgstr ""
+
+msgid "Undo"
+msgstr ""
+
+msgid "Bold (Ctrl+B)"
+msgstr ""
+
+msgid "Italic (Ctrl+I)"
+msgstr ""
+
+msgid "Underline (Ctrl+U)"
+msgstr ""
+
+msgid "Strikethrough (Ctrl+Shift+X)"
+msgstr ""
+
+msgid "Collapse to the title (or double-click the title)"
+msgstr ""
+
+msgid "Bullet list (Ctrl+Shift+L)"
+msgstr ""
+
+msgid "To-do list (Ctrl+Shift+K)"
+msgstr ""
+
+msgid "Make selected text smaller (Ctrl+-)"
+msgstr ""
+
+msgid "Make selected text larger (Ctrl++)"
+msgstr ""
+
+msgid "Delete note…"
+msgstr ""
+
+msgid "Change color"
+msgstr ""
+
+msgid "New note"
+msgstr ""
+
+msgid "Show all notes"
+msgstr ""
+
+msgid "Layer"
+msgstr ""
+
+msgid "Normal"
+msgstr ""
+
+msgid "Always on top"
+msgstr ""
+
+msgid "Always at the bottom (like the desktop)"
+msgstr ""
+
+msgid "Pin to the top of the list"
+msgstr ""
+
+msgid "Delete note"
+msgstr ""
+
+msgid "Color and options"
+msgstr ""
+
+msgid "This feature only works in X11/XWayland mode"
+msgstr ""
+
+msgid "Once"
+msgstr ""
+
+msgid "Every day"
+msgstr ""
+
+msgid "Every week"
+msgstr ""
+
+msgid "Repeat:"
+msgstr ""
+
+msgid "Remove alarm"
+msgstr ""
+
+msgid "Set alarm"
+msgstr ""
+
+msgid "That time is in the past"
+msgstr ""
+
+msgid " ↻ every day"
+msgstr ""
+
+msgid " ↻ every week"
+msgstr ""
+
+msgid "Snoozed: "
+msgstr ""
+
+msgid "Alarm: "
+msgstr ""
+
+msgid "Delete this note?"
+msgstr ""
+
+msgid "The note moves to the trash and can be restored within 30 days."
+msgstr ""
+
+msgid "Move to trash"
+msgstr ""
+
+msgid "Run in the background"
+msgstr ""
+
+msgid ""
+"Alarms keep working and notes stay open even if the main window is closed"
+msgstr ""
+
+msgid "Start automatically at login"
+msgstr ""
+
+msgid "Open notes come back; the main window stays closed"
+msgstr ""
+
+msgid "Background"
+msgstr ""
+
+msgid "Alarm sound"
+msgstr ""
+
+msgid "Play a sound when an alarm rings"
+msgstr ""
+
+msgid "Try the alarm sound"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Alarm"
+msgstr ""
+
+msgid "Global shortcuts"
+msgstr ""
+
+msgid ""
+"Ctrl+Alt+N: new note · Ctrl+Alt+A: all notes. GNOME asks you to confirm the "
+"shortcuts when you turn this on; start the app from the app menu."
+msgstr ""
+
+msgid "Shortcuts"
+msgstr ""
+
+msgid "Couldn't set up autostart"
+msgstr ""
+
+msgid "Create a new note"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "Pink"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Purple"
+msgstr ""
+
+msgid "Orange"
+msgstr ""
+
+msgid "Empty"
+msgstr ""
+
+msgid "Trash is empty"
+msgstr ""
+
+msgid "Deleted notes stay here for 30 days."
+msgstr ""
+
+#, python-brace-format
+msgid "Deleted {when} · permanently removed in {n} day"
+msgid_plural "Deleted {when} · permanently removed in {n} days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Restore"
+msgstr ""
+
+msgid "Delete permanently"
+msgstr ""
+
+msgid "Empty the trash?"
+msgstr ""
+
+msgid ""
+"All notes in the trash will be permanently deleted. This can't be undone."
+msgstr ""
+
+msgid "Quit"
+msgstr ""
+
+msgid "Click: show all notes"
+msgstr ""

@@ -1,0 +1,6 @@
+{
+  "uuid": "gnome-sticky-notes@vex.local",
+  "name": "GNOME Sticky Notes",
+  "description": "Masaüstüne yapışan basit notlar",
+  "shell-version": ["50"]
+}

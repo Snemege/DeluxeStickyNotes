@@ -8,7 +8,7 @@ from . import __version__, background
 from .i18n import _
 
 SUBJECT = _("Deluxe Sticky Notes feedback")
-REPO_URL = "https://github.com/Snemege/deluxe-sticky-notes"
+REPO_URL = "https://github.com/Snemege/DeluxeStickyNotes"
 ISSUES_URL = REPO_URL + "/issues/new"
 
 

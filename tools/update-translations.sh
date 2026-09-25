@@ -4,7 +4,7 @@
 set -e
 cd "$(dirname "$0")/.."
 xgettext --from-code=UTF-8 -L Python -k_ -kN_ -kngettext:1,2 --package-name=sticky-notes \
-    --msgid-bugs-address=https://github.com/Snemege/deluxe-sticky-notes/issues --no-location -o po/sticky-notes.pot stickynotes/*.py
+    --msgid-bugs-address=https://github.com/Snemege/DeluxeStickyNotes/issues --no-location -o po/sticky-notes.pot stickynotes/*.py
 for po in po/*.po; do
     lang=$(basename "$po" .po)
     msgmerge --update --backup=none --quiet "$po" po/sticky-notes.pot

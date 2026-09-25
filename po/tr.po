@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sticky-notes 0.1.0\n"
-"Report-Msgid-Bugs-To: snemege@gmail.com\n"
-"POT-Creation-Date: 2026-09-25 15:07+0300\n"
+"Report-Msgid-Bugs-To: https://github.com/Snemege/deluxe-sticky-notes/issues\n"
+"POT-Creation-Date: 2026-09-25 16:29+0300\n"
 "PO-Revision-Date: 2026-09-25 14:00+0300\n"
 "Last-Translator: sticky-notes contributors\n"
 "Language-Team: Turkish\n"
@@ -54,6 +54,9 @@ msgstr ""
 "Tüm notları görmek için buraya tıkla ya da üst çubuktaki Deluxe Yapışkan "
 "Notlar ikonunu kullan."
 
+msgid "Choose a notes.json file to import"
+msgstr "İçe aktarılacak notes.json dosyasını seç"
+
 #, python-brace-format
 msgid "{n} note imported"
 msgid_plural "{n} notes imported"
@@ -62,8 +65,8 @@ msgstr[0] "{n} not içe aktarıldı"
 msgid "No new notes found (you already have them all)"
 msgstr "Yeni not bulunamadı (hepsi zaten var)"
 
-msgid "Couldn't read the old notes"
-msgstr "Eski notlar okunamadı"
+msgid "Couldn't read that file"
+msgstr "Bu dosya okunamadı"
 
 msgid "Folder to save the notes in"
 msgstr "Notların kaydedileceği klasör"
@@ -98,8 +101,8 @@ msgstr "Deluxe Yapışkan Notlar geri bildirimi"
 msgid "Suggest to the developers"
 msgstr "Geliştiricilere öner"
 
-msgid "Email address the feedback goes to"
-msgstr "Geri bildirimin gideceği e-posta adresi"
+msgid "Or send by email to this address (optional)"
+msgstr "Ya da bu adrese e-posta gönder (isteğe bağlı)"
 
 msgid ""
 "This technical information is added to your message (the contents of your "
@@ -113,6 +116,9 @@ msgstr "Panoya kopyala"
 msgid "Send by email"
 msgstr "E-posta ile gönder"
 
+msgid "Open on GitHub"
+msgstr "GitHub'da aç"
+
 msgid "Write your suggestion, the bug you found, or a missing feature:"
 msgstr "Önerini, bulduğun hatayı ya da eksik bir özelliği yaz:"
 
@@ -124,6 +130,16 @@ msgstr ""
 
 msgid "Copied to the clipboard."
 msgstr "Panoya kopyalandı."
+
+msgid "Your browser opened; finish the report on GitHub."
+msgstr "Tarayıcın açıldı; bildirimi GitHub'da tamamla."
+
+msgid ""
+"Couldn't open the browser. Use “Copy to clipboard” and paste it into a new "
+"GitHub issue."
+msgstr ""
+"Tarayıcı açılamadı. “Panoya kopyala”yı kullanıp yeni bir GitHub sorununa "
+"yapıştır."
 
 msgid "Your email app opened; send it from there."
 msgstr "E-posta uygulaman açıldı; oradan gönder."
@@ -145,8 +161,8 @@ msgstr "Çöp kutusu"
 msgid "Export all notes…"
 msgstr "Tüm notları dışa aktar…"
 
-msgid "Import old (non-Flatpak) notes"
-msgstr "Eski (Flatpak dışı) notları içe aktar"
+msgid "Import notes from a file…"
+msgstr "Notları dosyadan içe aktar…"
 
 msgid "Suggest to the developers…"
 msgstr "Geliştiricilere öner…"
@@ -177,6 +193,9 @@ msgstr "Sonuç yok"
 
 msgid "No note matches your search."
 msgstr "Aramanla eşleşen not bulunamadı."
+
+msgid "Your notes were moved over from the previous version."
+msgstr "Notların önceki sürümden taşındı."
 
 #, python-brace-format
 msgid "Notes were restored from a backup because the file was corrupt ({date})"

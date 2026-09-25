@@ -9,7 +9,8 @@ from gi.repository import GLib
 
 from .i18n import N_
 
-APP_ID = "io.github.vex.StickyNotes"
+APP_ID = "io.github.Snemege.DeluxeStickyNotes"
+LEGACY_APP_IDS = ("io.github.vex.StickyNotes",)   # eski sürümlerin kimliği: veriler bir kez taşınır
 
 TRASH_DAYS = 30      # silinen notlar çöp kutusunda bu kadar gün kalır
 BACKUP_KEEP = 7      # en son bu kadar günlük yedek saklanır
@@ -85,6 +86,8 @@ class NoteStore:
         self.notes = {}
         self.trash = {}                 # id -> not (+ "deleted" zamanı)
         self.recovered_from = None      # bozuk dosya yedekten kurtarıldıysa yedeğin adı
+        self.migrated_from = None       # veriler eski kimlikli bir sürümden taşındıysa o kimlik
+        self._migrate_legacy()
         self._listeners = []
         self._save_id = 0
         self._load()
@@ -97,6 +100,25 @@ class NoteStore:
     def _notify(self):
         for cb in self._listeners:
             cb()
+
+    def _migrate_legacy(self):
+        """Yeni kimlikli sürüm ilk kez açılıyorsa notları/ayarları eski kimliğin klasöründen kopyalar.
+        Eski klasöre dokunulmaz (yedek olarak kalır)."""
+        if os.path.exists(self.path):
+            return
+        for legacy in LEGACY_APP_IDS:
+            old = os.path.join(data_home(), legacy)
+            if not os.path.exists(os.path.join(old, "notes.json")):
+                continue
+            os.makedirs(self.dir, exist_ok=True)
+            for name in ("notes.json", "settings.json"):
+                source = os.path.join(old, name)
+                if os.path.exists(source):
+                    shutil.copy2(source, os.path.join(self.dir, name))
+            if os.path.isdir(os.path.join(old, "backups")):
+                shutil.copytree(os.path.join(old, "backups"), self.backup_dir, dirs_exist_ok=True)
+            self.migrated_from = legacy
+            return
 
     def _read(self, path):
         with open(path, encoding="utf-8") as f:

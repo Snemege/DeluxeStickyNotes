@@ -2,7 +2,7 @@ import os
 
 from gi.repository import Adw, Gdk, Gio, GLib, GObject, Gtk, Pango
 
-from . import background, winpos
+from . import winpos
 from .i18n import _
 from .store import APP_ID, next_alarm_time
 
@@ -36,8 +36,7 @@ class MainWindow(Adw.ApplicationWindow):
         menu = Gio.Menu()
         menu.append(_("Trash"), "app.trash")
         menu.append(_("Export all notes…"), "app.export-all")
-        if background.in_flatpak() and os.path.exists(app.host_notes_path()):
-            menu.append(_("Import old (non-Flatpak) notes"), "app.import-host")
+        menu.append(_("Import notes from a file…"), "app.import-file")
         menu.append(_("Suggest to the developers…"), "app.feedback")
         menu.append(_("Settings"), "app.settings")
         menu.append(_("Quit (Ctrl+Q)"), "app.quit")
@@ -95,6 +94,8 @@ class MainWindow(Adw.ApplicationWindow):
 
         store.connect(self._schedule_rebuild)
         self._rebuild()
+        if store.migrated_from:
+            self.toasts.add_toast(Adw.Toast(title=_("Your notes were moved over from the previous version.")))
         if store.recovered_from:
             self.toasts.add_toast(Adw.Toast(
                 title=_("Notes were restored from a backup because the file was corrupt ({date})").format(

@@ -34,7 +34,8 @@ To get the app menu entry with its icon (no Flatpak needed):
 ./install-local.sh          # remove with: ./install-local.sh --remove
 ```
 
-Data lives in `~/.local/share/io.github.vex.StickyNotes/` (`notes.json`, `settings.json`, `backups/`).
+Data lives in `~/.local/share/io.github.Snemege.DeluxeStickyNotes/` (`notes.json`, `settings.json`, `backups/`).
+Notes from the earlier app id (`io.github.vex.StickyNotes`) are copied over automatically on first start.
 
 ## X11 / Wayland note
 
@@ -66,16 +67,18 @@ Add a language: `msginit -i po/sticky-notes.pot -o po/<lang>.po -l <lang>`.
 
 ## Flatpak
 
-See `io.github.vex.StickyNotes.yml`.
+See `io.github.Snemege.DeluxeStickyNotes.yml`.
 
 ```sh
 flatpak install --user flathub org.flatpak.Builder org.gnome.Sdk//50
-flatpak run org.flatpak.Builder --user --install --force-clean build-dir io.github.vex.StickyNotes.yml
-flatpak run io.github.vex.StickyNotes
+flatpak run org.flatpak.Builder --user --install --force-clean build-dir io.github.Snemege.DeluxeStickyNotes.yml
+flatpak run io.github.Snemege.DeluxeStickyNotes
 ```
 
-The Flatpak version keeps its data in `~/.var/app/io.github.vex.StickyNotes/`; use the main menu's
-"Import old (non-Flatpak) notes" to bring your existing notes over.
+The Flatpak version keeps its data in `~/.var/app/io.github.Snemege.DeluxeStickyNotes/`; use the main menu's
+"Import notes from a file…" and pick your existing `notes.json` to bring your notes over.
+It needs the X11 socket (no Wayland socket): note positions, the always-on-top/bottom layer, locking and keeping
+notes out of the dock all rely on X11 window hints.
 
 ## Files
 

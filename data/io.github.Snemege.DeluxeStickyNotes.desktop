@@ -6,20 +6,20 @@ Comment=Simple desktop sticky notes
 Comment[tr]=Basit masaüstü yapışkan notları
 Keywords=notes;sticky;todo;reminder;alarm;
 Keywords[tr]=not;yapışkan;yapılacaklar;hatırlatıcı;alarm;
-Exec=sticky-notes
-Icon=io.github.vex.StickyNotes
+Exec=deluxe-sticky-notes
+Icon=io.github.Snemege.DeluxeStickyNotes
 Categories=GNOME;GTK;Utility;
 Terminal=false
 StartupNotify=true
-StartupWMClass=io.github.vex.StickyNotes
+StartupWMClass=io.github.Snemege.DeluxeStickyNotes
 Actions=show-all;new-note;
 
 [Desktop Action show-all]
 Name=Show all notes
 Name[tr]=Tüm notları göster
-Exec=sticky-notes --show-all
+Exec=deluxe-sticky-notes --show-all
 
 [Desktop Action new-note]
 Name=New note
 Name[tr]=Yeni not
-Exec=sticky-notes --new-note
+Exec=deluxe-sticky-notes --new-note

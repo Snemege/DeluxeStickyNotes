@@ -8,7 +8,8 @@ from . import __version__, background
 from .i18n import _
 
 SUBJECT = _("Deluxe Sticky Notes feedback")
-DEFAULT_FEEDBACK_EMAIL = "snemege@gmail.com"
+REPO_URL = "https://github.com/Snemege/deluxe-sticky-notes"
+ISSUES_URL = REPO_URL + "/issues/new"
 
 
 def system_info():
@@ -37,6 +38,14 @@ def build_mailto(address, message, info):
     return f"mailto:{address}?subject={escape(SUBJECT)}&body={escape(compose(message, info))}"
 
 
+def build_issue_url(message, info):
+    """GitHub'da hazır doldurulmuş yeni sorun sayfası: başlık mesajın ilk satırı, gövde mesaj + teknik bilgi."""
+    escape = lambda text: GLib.Uri.escape_string(text, None, True)   # noqa: E731
+    first_line = message.strip().split("\n", 1)[0].strip()
+    title = first_line[:80] or SUBJECT
+    return f"{ISSUES_URL}?title={escape(title)}&body={escape(compose(message, info))}"
+
+
 def valid_address(address):
     address = address.strip()
     if not address or " " in address or address.count("@") != 1:
@@ -47,7 +56,7 @@ def valid_address(address):
 
 class FeedbackDialog(Adw.Dialog):
     def __init__(self, settings):
-        super().__init__(title=_("Suggest to the developers"), content_width=460, content_height=560)
+        super().__init__(title=_("Suggest to the developers"), content_width=460, content_height=600)
         self.settings = settings
         self.info = system_info()
 
@@ -57,33 +66,34 @@ class FeedbackDialog(Adw.Dialog):
         frame = Gtk.ScrolledWindow(child=self.text, min_content_height=150, vexpand=True,
                                    css_classes=["card"])
 
-        self.email_row = Adw.EntryRow(title=_("Email address the feedback goes to"),
-                                      text=settings.get("feedback_email") or DEFAULT_FEEDBACK_EMAIL)
+        # E-posta isteğe bağlıdır ve yalnızca bu bilgisayarda saklanır (kaynak kodda adres yoktur)
+        self.email_row = Adw.EntryRow(title=_("Or send by email to this address (optional)"),
+                                      text=settings.get("feedback_email") or "")
         self.email_row.connect("changed", self._on_email_changed)
         group = Adw.PreferencesGroup()
         group.add(self.email_row)
 
-        info_label = Gtk.Label(label=_("This technical information is added to your message (the contents of your notes are never sent):") + "\n\n"
-                                     + self.info, xalign=0, wrap=True, selectable=True,
-                               css_classes=["caption", "dim-label"])
+        info_label = Gtk.Label(label=_("This technical information is added to your message (the contents "
+                                       "of your notes are never sent):") + "\n\n" + self.info,
+                               xalign=0, wrap=True, selectable=True, css_classes=["caption", "dim-label"])
 
         self.copy_btn = Gtk.Button(label=_("Copy to clipboard"))
         self.copy_btn.connect("clicked", self._on_copy)
-        self.send_btn = Gtk.Button(label=_("Send by email"), css_classes=["suggested-action"])
-        self.send_btn.connect("clicked", self._on_send)
+        self.mail_btn = Gtk.Button(label=_("Send by email"))
+        self.mail_btn.connect("clicked", self._on_send_mail)
+        self.github_btn = Gtk.Button(label=_("Open on GitHub"), css_classes=["suggested-action"])
+        self.github_btn.connect("clicked", self._on_open_github)
         buttons = Gtk.Box(spacing=8, halign=Gtk.Align.END)
-        buttons.append(self.copy_btn)
-        buttons.append(self.send_btn)
+        for button in (self.copy_btn, self.mail_btn, self.github_btn):
+            buttons.append(button)
 
         self.status = Gtk.Label(xalign=0, wrap=True, css_classes=["dim-label"])
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12, margin_top=12, margin_bottom=12,
                       margin_start=12, margin_end=12)
-        box.append(Gtk.Label(label=_("Write your suggestion, the bug you found, or a missing feature:"), xalign=0))
-        box.append(frame)
-        box.append(group)
-        box.append(info_label)
-        box.append(self.status)
-        box.append(buttons)
+        box.append(Gtk.Label(label=_("Write your suggestion, the bug you found, or a missing feature:"),
+                             xalign=0))
+        for widget in (frame, info_label, group, self.status, buttons):
+            box.append(widget)
 
         view = Adw.ToolbarView(content=Gtk.ScrolledWindow(child=box, hscrollbar_policy=Gtk.PolicyType.NEVER))
         view.add_top_bar(Adw.HeaderBar())
@@ -100,9 +110,12 @@ class FeedbackDialog(Adw.Dialog):
 
     def _update_buttons(self):
         has_text = bool(self.message().strip())
+        valid_email = valid_address(self.email_row.get_text())
         self.copy_btn.set_sensitive(has_text)
-        self.send_btn.set_sensitive(has_text and valid_address(self.email_row.get_text()))
-        if has_text and not valid_address(self.email_row.get_text()):
+        self.github_btn.set_sensitive(has_text)
+        self.mail_btn.set_sensitive(has_text and valid_email)
+        typed = self.email_row.get_text().strip()
+        if has_text and typed and not valid_email:
             self.status.set_label(_("To send by email, enter a valid address above, or copy to the clipboard."))
         else:
             self.status.set_label("")
@@ -111,13 +124,25 @@ class FeedbackDialog(Adw.Dialog):
         Gdk.Display.get_default().get_clipboard().set(compose(self.message(), self.info))
         self.status.set_label(_("Copied to the clipboard."))
 
-    def _on_send(self, _btn):
-        uri = build_mailto(self.email_row.get_text().strip(), self.message(), self.info)
-        Gtk.UriLauncher.new(uri).launch(self.get_root(), None, self._on_launched)
+    def _launch(self, uri, ok_message, fail_message):
+        # Uzun mesajlar bağlantıya sığmayabilir; her ihtimale karşı panoya da kopyalanır
+        Gdk.Display.get_default().get_clipboard().set(compose(self.message(), self.info))
 
-    def _on_launched(self, launcher, result):
-        try:
-            launcher.launch_finish(result)
-            self.status.set_label(_("Your email app opened; send it from there."))
-        except GLib.Error:
-            self.status.set_label(_("Couldn't open an email app. Use “Copy to clipboard” and send it yourself."))
+        def finished(launcher, result):
+            try:
+                launcher.launch_finish(result)
+                self.status.set_label(ok_message)
+            except GLib.Error:
+                self.status.set_label(fail_message)
+
+        Gtk.UriLauncher.new(uri).launch(self.get_root(), None, finished)
+
+    def _on_open_github(self, _btn):
+        self._launch(build_issue_url(self.message(), self.info),
+                     _("Your browser opened; finish the report on GitHub."),
+                     _("Couldn't open the browser. Use “Copy to clipboard” and paste it into a new GitHub issue."))
+
+    def _on_send_mail(self, _btn):
+        self._launch(build_mailto(self.email_row.get_text().strip(), self.message(), self.info),
+                     _("Your email app opened; send it from there."),
+                     _("Couldn't open an email app. Use “Copy to clipboard” and send it yourself."))

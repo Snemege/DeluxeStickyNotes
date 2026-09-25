@@ -106,7 +106,7 @@ class TranslationTests(unittest.TestCase):
             self.assertEqual(sorted(re.findall(r"\{\w+\}", msgid)), sorted(re.findall(r"\{\w+\}", value)), msgid)
 
     def test_desktop_and_metainfo_have_turkish_names(self):
-        desktop = open(os.path.join(ROOT, "data", "io.github.vex.StickyNotes.desktop"), encoding="utf-8").read()
+        desktop = open(os.path.join(ROOT, "data", "io.github.Snemege.DeluxeStickyNotes.desktop"), encoding="utf-8").read()
         self.assertIn("Name=Deluxe Sticky Notes", desktop)
         self.assertIn("Name[tr]=Deluxe Yapışkan Notlar", desktop)
 

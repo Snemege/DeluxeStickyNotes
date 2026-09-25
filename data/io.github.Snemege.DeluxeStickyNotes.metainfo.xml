@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.Snemege.DeluxeStickyNotes</id>
+
+  <name>Deluxe Sticky Notes</name>
+  <name xml:lang="tr">Deluxe Yapışkan Notlar</name>
+  <summary>Sticky notes with alarms and to-do lists</summary>
+  <summary xml:lang="tr">Alarmlı ve yapılacaklar listeli yapışkan notlar</summary>
+  <developer id="io.github.snemege">
+    <name>Snemege</name>
+  </developer>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <url type="homepage">https://github.com/Snemege/deluxe-sticky-notes</url>
+  <url type="bugtracker">https://github.com/Snemege/deluxe-sticky-notes/issues</url>
+  <url type="vcs-browser">https://github.com/Snemege/deluxe-sticky-notes</url>
+
+  <description>
+    <p>Deluxe Sticky Notes puts small, colorful notes on your desktop. Every note lives in its own window and is saved as you type.</p>
+    <p xml:lang="tr">Deluxe Yapışkan Notlar, masaüstüne küçük ve renkli notlar koyar. Her not kendi penceresinde durur ve yazdıkça kaydedilir.</p>
+    <p>Features:</p>
+    <p xml:lang="tr">Özellikler:</p>
+    <ul>
+      <li>Rich text: bold, italic, underline, strikethrough and per-selection text size</li>
+      <li xml:lang="tr">Zengin metin: kalın, italik, altı çizili, üstü çizili ve seçili metin için yazı boyutu</li>
+      <li>Bullet lists and clickable to-do lists</li>
+      <li xml:lang="tr">Madde işaretli listeler ve tıklanabilir yapılacaklar listeleri</li>
+      <li>Alarms with repeat and snooze, and a sound</li>
+      <li xml:lang="tr">Tekrarlı ve ertelenebilir, sesli alarmlar</li>
+      <li>Lock a note so it can't be moved, resized, closed or edited</li>
+      <li xml:lang="tr">Notu kilitle: taşınamaz, boyutlanamaz, kapanamaz ve düzenlenemez</li>
+      <li>Collapse a note to just its title</li>
+      <li xml:lang="tr">Notu yalnızca başlığa küçültme</li>
+      <li>Search, pinning, six colors and a trash can</li>
+      <li xml:lang="tr">Arama, sabitleme, altı renk ve çöp kutusu</li>
+      <li>Daily backups, and export to Markdown</li>
+      <li xml:lang="tr">Günlük yedekler ve Markdown dışa aktarma</li>
+      <li>Runs in the background with a tray icon (needs the AppIndicator extension on GNOME)</li>
+      <li xml:lang="tr">Üst çubukta ikonla arka planda çalışma (GNOME'da AppIndicator uzantısı gerekir)</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.Snemege.DeluxeStickyNotes.desktop</launchable>
+  <provides>
+    <binary>deluxe-sticky-notes</binary>
+  </provides>
+
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="820" height="520">https://raw.githubusercontent.com/Snemege/deluxe-sticky-notes/v0.1.0/data/screenshots/main-window.png</image>
+      <caption>All your notes as cards, with pinning, alarms and a locked note</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="380" height="360">https://raw.githubusercontent.com/Snemege/deluxe-sticky-notes/v0.1.0/data/screenshots/note-window.png</image>
+      <caption>A note with a to-do list, formatting and an alarm</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="380" height="360">https://raw.githubusercontent.com/Snemege/deluxe-sticky-notes/v0.1.0/data/screenshots/locked-note.png</image>
+      <caption>A locked note behaves like part of the wallpaper</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.1.0" date="2026-09-25">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+  <branding>
+    <color type="primary" scheme_preference="light">#fff3a3</color>
+    <color type="primary" scheme_preference="dark">#e5a50a</color>
+  </branding>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+</component>

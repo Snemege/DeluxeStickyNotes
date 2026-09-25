@@ -15,6 +15,19 @@ def _autostart_path():
     return os.path.join(config, "autostart", f"{APP_ID}.desktop")
 
 
+def migrate_legacy_autostart(enabled):
+    """Eski kimliğin otomatik başlatma dosyasını kaldırır; ayar açıksa yenisini yazar."""
+    from .store import LEGACY_APP_IDS
+    config = os.environ.get("XDG_CONFIG_HOME") or GLib.get_user_config_dir()
+    for legacy in LEGACY_APP_IDS:
+        try:
+            os.remove(os.path.join(config, "autostart", f"{legacy}.desktop"))
+        except FileNotFoundError:
+            pass
+    if enabled:
+        set_autostart(True)
+
+
 def _portal_request(enabled):
     """Flatpak içinde otomatik başlatma Background portalı üzerinden istenir."""
     try:
@@ -22,7 +35,7 @@ def _portal_request(enabled):
         options = {
             "autostart": GLib.Variant("b", enabled),
             "background": GLib.Variant("b", enabled),
-            "commandline": GLib.Variant("as", ["sticky-notes", "--background"]),
+            "commandline": GLib.Variant("as", ["deluxe-sticky-notes", "--background"]),
             "reason": GLib.Variant("s", _("Runs in the background for alarms and open notes")),
         }
         bus.call_sync(

@@ -130,3 +130,37 @@ class ImportTests(unittest.TestCase):
             store.import_from(bad)
         with self.assertRaises(ValueError):
             store.import_from(os.path.join(store.dir, "yok.json"))
+
+
+class MigrationTests(unittest.TestCase):
+    def test_notes_and_settings_move_from_legacy_id_once(self):
+        helpers.isolate_dirs()
+        legacy = os.path.join(os.environ["XDG_DATA_HOME"], S.LEGACY_APP_IDS[0])
+        os.makedirs(os.path.join(legacy, "backups"))
+        old_notes = {"version": 1, "notes": [{"id": "abc", "text": "eski not", "tags": [], "color": "blue",
+                                              "width": 380, "height": 360, "open": False, "modified": 1.0}], "trash": []}
+        import json
+        json.dump(old_notes, open(os.path.join(legacy, "notes.json"), "w"))
+        json.dump({"background": True, "autostart": True}, open(os.path.join(legacy, "settings.json"), "w"))
+        open(os.path.join(legacy, "backups", "notes-2026-09-01.json"), "w").write("{}")
+
+        store = S.NoteStore()
+        self.assertEqual(store.migrated_from, S.LEGACY_APP_IDS[0])
+        self.assertEqual(store.notes["abc"]["text"], "eski not")
+        self.assertTrue(S.Settings(store.dir).get("autostart"))
+        self.assertTrue(os.path.exists(os.path.join(store.backup_dir, "notes-2026-09-01.json")))
+        self.assertTrue(os.path.exists(os.path.join(legacy, "notes.json")))      # eski klasör bozulmaz
+        self.assertNotEqual(store.dir, legacy)
+        # ikinci açılışta tekrar taşınmaz (yeni klasör zaten var)
+        store.update("abc", text="yeni metin")
+        store.save_now()
+        again = S.NoteStore()
+        self.assertIsNone(again.migrated_from)
+        self.assertEqual(again.notes["abc"]["text"], "yeni metin")
+
+    def test_no_legacy_data_means_no_migration(self):
+        helpers.isolate_dirs()
+        self.assertIsNone(S.NoteStore().migrated_from)
+
+    def test_app_id_matches_github_account(self):
+        self.assertEqual(S.APP_ID, "io.github.Snemege.DeluxeStickyNotes")

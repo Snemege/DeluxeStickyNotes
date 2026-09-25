@@ -63,6 +63,8 @@ class App(Adw.Application):
         Gtk.Window.set_default_icon_name(APP_ID)
         self.store = NoteStore()
         self.settings = Settings(self.store.dir)
+        if self.store.migrated_from:
+            background.migrate_legacy_autostart(bool(self.settings.get("autostart")))
         if self.settings.get("background"):
             self.hold()
             self._held = True
@@ -74,7 +76,7 @@ class App(Adw.Application):
             ("trash", lambda *_: self.show_trash(), []),
             ("export-all", lambda *_: self.export_all(), []),
             ("feedback", lambda *_: self.show_feedback(), []),
-            ("import-host", lambda *_: self.import_host_notes(), []),
+            ("import-file", lambda *_: self.import_notes_file(), []),
             ("quit", lambda *_: self.quit_app(), ["<Ctrl>q"]),
         ]:
             action = Gio.SimpleAction.new(name, None)
@@ -206,21 +208,27 @@ class App(Adw.Application):
         if self.main is not None:
             TrashDialog(self.store).present(self.main)
 
-    def host_notes_path(self):
-        """Flatpak dışı kurulumun notes.json yolu (Flatpak'tan salt okunur erişilir)."""
-        return os.path.join(os.path.expanduser("~/.local/share"), APP_ID, "notes.json")
-
-    def import_host_notes(self):
-        path = self.host_notes_path()
+    def import_notes_file(self):
+        """Başka bir notes.json'daki (örn. eski kurulum ya da yedek) notları içe aktarır."""
         if self.main is None:
             return
-        try:
-            count = self.store.import_from(path)
-            title = (ngettext("{n} note imported", "{n} notes imported", count).format(n=count) if count
-                     else _("No new notes found (you already have them all)"))
-        except ValueError:
-            title = _("Couldn't read the old notes")
-        self.main.toasts.add_toast(Adw.Toast(title=title))
+        dialog = Gtk.FileDialog(title=_("Choose a notes.json file to import"))
+
+        def done(dlg, result):
+            try:
+                path = dlg.open_finish(result).get_path()
+            except GLib.Error:
+                return                      # kullanıcı vazgeçti
+            try:
+                count = self.store.import_from(path)
+                title = (ngettext("{n} note imported", "{n} notes imported", count).format(n=count) if count
+                         else _("No new notes found (you already have them all)"))
+            except ValueError:
+                title = _("Couldn't read that file")
+            if self.main is not None:
+                self.main.toasts.add_toast(Adw.Toast(title=title))
+
+        dialog.open(self.main, None, done)
 
     def export_all(self):
         """Tüm notları seçilen klasöre Markdown dosyaları olarak yazar."""

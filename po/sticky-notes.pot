@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sticky-notes\n"
-"Report-Msgid-Bugs-To: snemege@gmail.com\n"
-"POT-Creation-Date: 2026-09-25 15:07+0300\n"
+"Report-Msgid-Bugs-To: https://github.com/Snemege/deluxe-sticky-notes/issues\n"
+"POT-Creation-Date: 2026-09-25 16:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,9 @@ msgid ""
 "bar."
 msgstr ""
 
+msgid "Choose a notes.json file to import"
+msgstr ""
+
 #, python-brace-format
 msgid "{n} note imported"
 msgid_plural "{n} notes imported"
@@ -62,7 +65,7 @@ msgstr[1] ""
 msgid "No new notes found (you already have them all)"
 msgstr ""
 
-msgid "Couldn't read the old notes"
+msgid "Couldn't read that file"
 msgstr ""
 
 msgid "Folder to save the notes in"
@@ -99,7 +102,7 @@ msgstr ""
 msgid "Suggest to the developers"
 msgstr ""
 
-msgid "Email address the feedback goes to"
+msgid "Or send by email to this address (optional)"
 msgstr ""
 
 msgid ""
@@ -113,6 +116,9 @@ msgstr ""
 msgid "Send by email"
 msgstr ""
 
+msgid "Open on GitHub"
+msgstr ""
+
 msgid "Write your suggestion, the bug you found, or a missing feature:"
 msgstr ""
 
@@ -121,6 +127,14 @@ msgid ""
 msgstr ""
 
 msgid "Copied to the clipboard."
+msgstr ""
+
+msgid "Your browser opened; finish the report on GitHub."
+msgstr ""
+
+msgid ""
+"Couldn't open the browser. Use “Copy to clipboard” and paste it into a new "
+"GitHub issue."
 msgstr ""
 
 msgid "Your email app opened; send it from there."
@@ -142,7 +156,7 @@ msgstr ""
 msgid "Export all notes…"
 msgstr ""
 
-msgid "Import old (non-Flatpak) notes"
+msgid "Import notes from a file…"
 msgstr ""
 
 msgid "Suggest to the developers…"
@@ -173,6 +187,9 @@ msgid "No results"
 msgstr ""
 
 msgid "No note matches your search."
+msgstr ""
+
+msgid "Your notes were moved over from the previous version."
 msgstr ""
 
 #, python-brace-format
